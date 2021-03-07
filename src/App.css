@@ -98,7 +98,7 @@ html {
   position: relative;
   font-size: inherit;
   font-family: inherit;
-  color: #333333;
+  color: #ffffff;
   padding: 0.5em 1em;
   outline: none;
   border: 2px solid #6e5494;
@@ -125,7 +125,7 @@ html {
 
 .form-wrapper button:hover {
   cursor: pointer;
-  color: #f3f3f3;
+  color: #ffffff;
 }
 
 .form-wrapper button:hover::before {
