@@ -58,9 +58,11 @@ class App extends Component {
                 return (
                 <div className="github-cards" key={repo.id}>
                   <a
-                    href={`https://github.com/repo/${repo.id}`}
+                    href={`https://github.com/${repo.html_url}`}
                     className="github-card"
-                    data-github="Nexmo/nexmo-ruby"
+                    rel="noreferrer"
+                    target="_blank"
+                    data-github={repo.name}
                   >
                     <h3>{repo.name}</h3>
                     <span className="github-card__meta">

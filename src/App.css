@@ -199,6 +199,8 @@ html {
   flex-flow: row;
   flex-wrap: wrap;
   width: 250px;
+  float: left;
+  padding-left: 7px;
 }
 
 .github-card {
