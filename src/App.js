@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import React, { Component } from "react";
 import Header from "./components/Header";
 import Form from "./components/Form";
@@ -37,11 +38,12 @@ class App extends Component {
       `https://api.github.com/users/${username}/repos`
     );
     const repoData = await repoRequest.json();
-    this.setState({ repos: repoData });
+    this.setState({ userRepos: repoData });
   };
 
   render() {
-    const repos = this.state.repos;
+    const repos = this.state.userRepos;
+    repos && repos.map((repo) => {});
     return (
       <div className="App">
         <div className="App-Wrapper">
@@ -50,8 +52,11 @@ class App extends Component {
           <div className="user-profile-wrapper">
             <Profile profile={this.state.profile} />
           </div>
-            {repos && repos.map((repo) => {
-              <div className="github-cards" key={repo.id}>
+          {repos && (
+            <React.Fragment>
+              {repos.map((repo) => {
+                return (
+                <div className="github-cards" key={repo.id}>
                   <a
                     href={`https://github.com/repo/${repo.id}`}
                     className="github-card"
@@ -71,9 +76,11 @@ class App extends Component {
                       </span>
                     </span>
                   </a>
-              </div>
-            })
-          }
+                </div>
+                );
+              })}
+            </React.Fragment>
+          )}
         </div>
       </div>
     );

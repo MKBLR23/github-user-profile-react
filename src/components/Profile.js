@@ -9,7 +9,6 @@ const imageStyles = {
 const Profile = (props) => (
     <div className="user-wrapper">
         <div className="image-wrapper">
-          {console.log('HGDHGDDGH', props)}
         { props.profile && props.profile.avatar_url &&  
             <React.Fragment>
                 <h2>{props.profile.name}</h2>
